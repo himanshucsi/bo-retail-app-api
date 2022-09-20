@@ -8,7 +8,7 @@ public class HealthCheckController {
 
 	@GetMapping("checkHealth")
 	public String testAppAndDBStatus() {
-		return "Running successfully";
+		return "Running successfully with version 1";
 	}
 	
 }
