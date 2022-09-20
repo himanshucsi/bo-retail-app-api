@@ -1,5 +1,8 @@
 package com.himanshu.api.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ErrorDto {
 
 	private String errorMessage;
