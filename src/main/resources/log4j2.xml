@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration
+	packages="com.microsoft.applicationinsights.log4j.v2">
+	<Properties>
+		<Property name="LOG_PATTERN">
+			%d{yyyy-MM-dd HH:mm:ss} %5p -[%15.15t]%-40.40c{1.} %X{CorrelationId} : %m%n
+		</Property>
+	</Properties>
+
+	<Appenders>
+		<ApplicationInsightsAppender
+			name="aiAppender"
+			instrumentationKey="bd1607f8-7fb6-486d-9237-5eb981b47f2f">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</ApplicationInsightsAppender>
+
+		<Console name="ConsoleAppender" target="SYSTEM_OUT"
+			follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="ConsoleAppender" />
+			<AppenderRef ref="aiAppender" />
+		</Root>
+	</Loggers>
+</Configuration>
