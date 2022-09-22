@@ -157,7 +157,7 @@ CREATE TABLE  [complaint] (
   ON UPDATE CASCADE;
 
   
--- Order Table 
+-- 9 Order Table 
  
 CREATE TABLE  [orders] (
   [order_id] [INT] NOT NULL IDENTITY(1,1),
